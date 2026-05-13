@@ -10,8 +10,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -24,7 +22,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-btns">
-            <a href="#contact" class="btn quote-btn">Get a Quote</a>
             <div class="menu-toggle" id="menuToggle">
                 <i data-lucide="menu"></i>
             </div>
@@ -33,23 +30,45 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="hero-bg.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <h1 style="font-weight: 900; letter-spacing: -1px;" data-reveal="fade-down">STEEL WITH PRECISION</h1>
             <p data-reveal="fade-up" style="transition-delay: 0.2s;">Custom-built stainless steel solutions. From any model of water tanks to high-end furniture and kitchen accessories. Built to last, engineered to excel.</p>
             <div class="hero-btns" data-reveal="fade-up" style="transition-delay: 0.4s;">
-                <a href="#products" class="btn">Our Services</a>
-                <a href="#contact" class="btn" style="background: transparent; border-color: white; margin-left: 1rem;">Work With Us</a>
+                <a href="#contact" class="btn">Contact Us</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="section" id="about">
-        <div class="section-header">
-            <span style="color: var(--secondary-color); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;" data-reveal="fade-up">Who We Are</span>
-            <h2 style="margin-top: 0.5rem;" data-reveal="fade-up" style="transition-delay: 0.1s;">Engineered Excellence</h2>
-            <div class="underline" style="margin: 1rem auto;" data-reveal="zoom-in" style="transition-delay: 0.2s;"></div>
-            <p style="max-width: 800px; margin: 1.5rem auto;" data-reveal="fade-up" style="transition-delay: 0.3s;">VMR Engineers is a leading name in high-quality steel fabrication. We specialize in creating custom stainless steel solutions tailored to your specific requirements. Whether it's a water tank for a unique space or bespoke steel furniture, we deliver strength and style.</p>
+        <div class="about-container">
+            <div class="about-visual" data-reveal="fade-right">
+                <div class="video-box">
+                    <video autoplay muted loop playsinline>
+                        <source src="about-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="about-content" data-reveal="fade-left">
+                <span class="subtitle">CRAFTING EXCELLENCE</span>
+                <h2>Precision Engineering for a Lifetime of Reliability</h2>
+                <p>At VMR ENGINEERS, we believe that steel is more than just a material; it is the foundation of durability and modern design. Specializing in high-grade stainless steel fabrication, we bring precision to every weld and sophistication to every product, from custom-shaped water tanks to artisanal furniture.</p>
+                <p>Our approach combines traditional craftsmanship with cutting-edge technology. Whether we are engineering a modular kitchen system or a complex industrial tank, our 'Zero-Compromise' quality standard ensures that every VMR product is built to withstand the test of time.</p>
+                
+                <div class="about-features">
+                    <div class="feature-small">
+                        <h4>Bespoke Design</h4>
+                        <p>Every product is tailored to fit your specific spatial and functional requirements.</p>
+                    </div>
+                    <div class="feature-small">
+                        <h4>Premium Materials</h4>
+                        <p>We use only the finest SS 304 and 316 grade steel for maximum longevity and hygiene.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -201,6 +220,8 @@
         const menuIcon = menuToggle.querySelector('i');
 
         menuToggle.addEventListener('click', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('menu-active');
             navLinks.classList.toggle('active');
             const isActive = navLinks.classList.contains('active');
             menuIcon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
@@ -209,41 +230,14 @@
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
+                const nav = document.getElementById('navbar');
+                nav.classList.remove('menu-active');
                 navLinks.classList.remove('active');
                 menuIcon.setAttribute('data-lucide', 'menu');
                 lucide.createIcons();
             });
         });
 
-        // Custom Cursor
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            dot.style.left = `${posX}px`;
-            dot.style.top = `${posY}px`;
-
-            outline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
-
-        // Cursor Hover Effects
-        const interactiveElements = document.querySelectorAll('a, button, .product-card, .gallery-item, .menu-toggle');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                outline.classList.add('hover');
-                dot.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                outline.classList.remove('hover');
-                dot.classList.remove('hover');
-            });
-        });
     </script>
 </body>
 </html>
