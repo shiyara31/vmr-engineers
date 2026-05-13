@@ -211,8 +211,15 @@ nav.scrolled .menu-toggle {
     padding: 0 10%;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
     animation: fadeInDown 1s ease-out;
 }
@@ -246,7 +253,9 @@ nav.scrolled .menu-toggle {
 
 /* Products Section */
 .section {
-    padding: 100px 10%;
+    padding: 120px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .section-header {
@@ -303,12 +312,18 @@ nav.scrolled .menu-toggle {
 }
 
 .product-info {
-    padding: 2rem;
+    padding: 2.5rem;
+    text-align: center;
 }
 
 .product-info h3 {
     margin-bottom: 1rem;
     color: var(--steel-dark);
+}
+
+.product-info ul {
+    display: inline-block;
+    text-align: left;
 }
 
 /* Why Us Section */
@@ -344,8 +359,8 @@ nav.scrolled .menu-toggle {
 /* Gallery Section */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
     padding: 2rem 0;
 }
 
@@ -408,8 +423,9 @@ nav.scrolled .menu-toggle {
 .contact-details div {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-form {
@@ -434,9 +450,9 @@ nav.scrolled .menu-toggle {
 
 /* Footer */
 footer {
-    background: #111;
+    background: #000a14;
     color: #888;
-    padding: 4rem 10% 2rem;
+    padding: 5rem 10% 2rem;
     text-align: center;
 }
 
