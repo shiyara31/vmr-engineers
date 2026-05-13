@@ -10,18 +10,25 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="logo">VMR <span>ENGINEERS</span></div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#products">Services</a></li>
             <li><a href="#gallery">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Get a Quote</a>
+        <div class="nav-btns">
+            <a href="#contact" class="btn quote-btn">Get a Quote</a>
+            <div class="menu-toggle" id="menuToggle">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -149,7 +156,7 @@
             </div>
 
             <form class="contact-form" data-reveal style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-grid">
                     <input type="text" placeholder="Name" required>
                     <input type="email" placeholder="Email" required>
                 </div>
@@ -187,6 +194,56 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isActive = navLinks.classList.contains('active');
+            menuIcon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Custom Cursor
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            dot.style.left = `${posX}px`;
+            dot.style.top = `${posY}px`;
+
+            outline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Cursor Hover Effects
+        const interactiveElements = document.querySelectorAll('a, button, .product-card, .gallery-item, .menu-toggle');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                outline.classList.add('hover');
+                dot.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                outline.classList.remove('hover');
+                dot.classList.remove('hover');
+            });
+        });
     </script>
 </body>
 </html>
