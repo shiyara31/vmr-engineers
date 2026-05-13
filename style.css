@@ -124,6 +124,11 @@ nav.scrolled {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+nav.scrolled .logo {
     color: var(--steel-dark);
 }
 
@@ -139,11 +144,15 @@ nav.scrolled {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--steel-dark);
+    color: var(--white);
     font-weight: 600;
     font-size: 0.9rem;
     transition: var(--transition);
     position: relative;
+}
+
+nav.scrolled .nav-links a {
+    color: var(--steel-dark);
 }
 
 .nav-links a::after {
@@ -175,8 +184,12 @@ nav.scrolled {
 .menu-toggle {
     display: none;
     cursor: pointer;
-    color: var(--steel-dark);
+    color: var(--white);
     transition: var(--transition);
+}
+
+nav.scrolled .menu-toggle {
+    color: var(--steel-dark);
 }
 
 .menu-toggle:hover {
@@ -490,6 +503,10 @@ footer {
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         z-index: 1001;
+    }
+
+    .nav-links a {
+        color: var(--steel-dark) !important;
     }
 
     .nav-links.active {
