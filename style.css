@@ -886,6 +886,44 @@ nav.scrolled .nav-pill {
     width: 100%;
 }
 
+/* Meet the Developer */
+.footer-developer {
+    margin: 1.5rem 0 1rem;
+    text-align: center;
+}
+
+.developer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #718096;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(28, 117, 188, 0.2);
+    transition: var(--transition);
+}
+
+.developer-link:hover {
+    color: #e1306c;
+    border-color: #e1306c;
+    background: rgba(225, 48, 108, 0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.15);
+}
+
+.insta-icon {
+    width: 16px;
+    height: 16px;
+    transition: var(--transition);
+}
+
+.developer-link:hover .insta-icon {
+    color: #e1306c;
+}
+
 /* Footer Bottom Bar */
 .footer-bottom-bar {
     display: flex;
