@@ -220,10 +220,10 @@ nav.scrolled .nav-pill {
 
 .hero-video {
     position: absolute;
-    top: 0;
+    top: -8%;           /* Shift up to clip bottom watermark */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 116%;       /* Taller than container so bottom is hidden */
     object-fit: cover;
     z-index: -1;
 }
