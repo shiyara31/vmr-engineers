@@ -13,17 +13,22 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="logo">VMR <span>ENGINEERS</span></div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#products">Services</a></li>
-            <li><a href="#gallery">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-btns">
-            <div class="menu-toggle" id="menuToggle">
-                <i data-lucide="menu"></i>
+        <div class="nav-pill">
+            <a href="#home" class="logo-link">
+                <img src="logo.png" alt="VMR Engineers Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Services</a></li>
+                <li><a href="#gallery">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#contact" class="quote-cta-btn">Get a Quote</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </div>
             </div>
         </div>
     </nav>
@@ -73,7 +78,7 @@
     </section>
 
     <!-- Services Grid -->
-    <section class="section" id="products" style="background-color: white;">
+    <section class="section" id="products">
         <div class="section-header" data-reveal="fade-up">
             <h2>Core Expertise</h2>
             <div class="underline"></div>
@@ -130,34 +135,101 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Our Products Section -->
     <section class="section" id="gallery">
         <div class="section-header" data-reveal="fade-up">
-            <h2>Project Gallery</h2>
+            <h2>Our Products</h2>
+            <p style="color:rgba(255,255,255,0.7); margin-top:1rem; font-size:1rem;">Precision-engineered solutions across industries</p>
             <div class="underline"></div>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item" data-reveal="zoom-in">
-                <img src="hero.png" alt="Project 1">
-                <div class="gallery-overlay">Industrial Installation</div>
+        <div class="products-showcase-grid">
+
+            <!-- Product 1 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.0s;">
+                <div class="psc-image">
+                    <img src="water-tank.png" alt="Custom Water Tanks">
+                </div>
+                <div class="psc-body">
+                    <h3>Custom Water Tanks</h3>
+                </div>
             </div>
-            <div class="gallery-item" data-reveal="zoom-in" style="transition-delay: 0.1s;">
-                <img src="water-tank.png" alt="Project 2">
-                <div class="gallery-overlay">Custom Water Tank</div>
+
+            <!-- Product 2 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.1s;">
+                <div class="psc-image">
+                    <img src="furniture.png" alt="Steel Structural Work">
+                </div>
+                <div class="psc-body">
+                    <h3>Steel Structural Work</h3>
+                </div>
             </div>
-            <div class="gallery-item" data-reveal="zoom-in" style="transition-delay: 0.2s;">
-                <img src="furniture.png" alt="Project 3">
-                <div class="gallery-overlay">Modern Furniture</div>
+
+            <!-- Product 3 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.2s;">
+                <div class="psc-image">
+                    <img src="kitchen.png" alt="Kitchen Accessories">
+                </div>
+                <div class="psc-body">
+                    <h3>Kitchen Accessories</h3>
+                </div>
             </div>
-            <div class="gallery-item" data-reveal="zoom-in" style="transition-delay: 0.3s;">
-                <img src="kitchen.png" alt="Project 4">
-                <div class="gallery-overlay">Kitchen Fit-out</div>
+
+            <!-- Product 4 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.3s;">
+                <div class="psc-image">
+                    <img src="hero.png" alt="Effluent Treatment Plant">
+                </div>
+                <div class="psc-body">
+                    <h3>Effluent Treatment Plant</h3>
+                </div>
             </div>
+
+            <!-- Product 5 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.4s;">
+                <div class="psc-image">
+                    <img src="furniture.png" alt="Steel Furniture">
+                </div>
+                <div class="psc-body">
+                    <h3>Steel Furniture</h3>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.5s;">
+                <div class="psc-image">
+                    <img src="hero.png" alt="Heavy Structure Fabrication">
+                </div>
+                <div class="psc-body">
+                    <h3>Heavy Structure Fabrication &amp; Erection</h3>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.6s;">
+                <div class="psc-image">
+                    <img src="kitchen.png" alt="Puff Sheet Work">
+                </div>
+                <div class="psc-body">
+                    <h3>Puff Sheet Work</h3>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-showcase-card" data-reveal="zoom-in" style="transition-delay:0.7s;">
+                <div class="psc-image">
+                    <img src="water-tank.png" alt="Pergolas">
+                </div>
+                <div class="psc-body">
+                    <h3>Pergolas &amp; Shade Structures</h3>
+                </div>
+            </div>
+
         </div>
     </section>
 
+
     <!-- Contact Section -->
-    <section class="section" id="contact" style="background-color: var(--steel-light);">
+    <section class="section" id="contact">
         <div class="section-header" data-reveal="fade-up">
             <h2>Get A Quote</h2>
             <div class="underline"></div>
@@ -174,7 +246,7 @@
                 </div>
             </div>
 
-            <form class="contact-form" data-reveal="fade-left" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <form class="contact-form" data-reveal="fade-left" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
                 <div class="form-grid">
                     <input type="text" placeholder="Name" required>
                     <input type="email" placeholder="Email" required>
@@ -187,15 +259,19 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--primary-color);">
-        <div class="footer-logo">VMR <span>ENGINEERS</span></div>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#products">Services</a>
-            <a href="#gallery">Gallery</a>
+    <footer class="site-footer">
+        <div class="footer-logo-box">
+            <img src="logo.png" alt="VMR Engineers Logo" class="footer-logo-img">
         </div>
-        <p class="copyright" style="color: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.05);">&copy; 2026 VMR Engineers. Precision in every weld.</p>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+            <p class="copyright">&copy; 2026 VMR Engineers. Precision in every weld.</p>
+        </div>
     </footer>
 
     <script>
