@@ -619,34 +619,134 @@ nav.scrolled .nav-pill {
     color: #777;
 }
 
-/* Why Us Section */
+/* Why Us Section - Redesigned Mixed Gradient theme & Desktop Grid */
 .why-us {
-    background: var(--steel-dark);
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(28, 117, 188, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(57, 181, 74, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(247, 147, 30, 0.08) 0%, transparent 40%),
+        #020b18;
     color: var(--white);
+    padding: 120px 10%;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .why-us .section-header h2 {
-    color: var(--white);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.feature-item {
-    text-align: center;
-    padding: 2rem;
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-}
-
-.feature-item i {
+    color: #ffffff;
     font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
+    text-transform: none;
+    letter-spacing: 0px;
+}
+
+.why-us-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-us-row-card {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    transition: var(--transition);
+}
+
+.why-us-row-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(28, 117, 188, 0.25);
+}
+
+.wur-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wur-icon i, .wur-icon svg {
+    width: 52px;
+    height: 52px;
+    color: #ffffff;
+    stroke-width: 1.5;
+}
+
+.wur-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.wur-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0.3px;
+}
+
+.wur-content p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Info Bar at the Bottom */
+.why-us-infobar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 3.5rem auto 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.infobar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+}
+
+.infobar-item i, .infobar-item svg {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+}
+
+.infobar-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.infobar-arrow i, .infobar-arrow svg {
+    width: 28px;
+    height: 28px;
+    transition: var(--transition);
+}
+
+.infobar-arrow:hover {
+    transform: translateX(6px);
 }
 
 /* ============================================
@@ -654,8 +754,8 @@ nav.scrolled .nav-pill {
    ============================================ */
 .products-showcase-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
     padding: 2rem 0;
 }
 
@@ -679,14 +779,21 @@ nav.scrolled .nav-pill {
 
 .psc-image {
     position: relative;
-    height: 180px;
+    height: 320px;
+    background: #ffffff;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
 }
 
 .psc-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
@@ -706,6 +813,18 @@ nav.scrolled .nav-pill {
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.psc-badge.badge-orange {
+    background: var(--logo-orange);
+}
+
+.psc-badge.badge-green {
+    background: var(--logo-green);
+}
+
+.psc-badge.badge-gray {
+    background: #555c66;
 }
 
 .psc-body {
@@ -828,19 +947,12 @@ nav.scrolled .nav-pill {
 
 .footer-logo-box {
     display: inline-block;
-    background: #f7faff;
-    padding: 10px 24px;
-    border-radius: 50px;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(28, 117, 188, 0.12);
-    border: 2px solid rgba(28, 117, 188, 0.15);
     transition: var(--transition);
 }
 
 .footer-logo-box:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(28, 117, 188, 0.2);
-    border-color: var(--logo-blue);
 }
 
 .footer-logo-img {
@@ -980,6 +1092,28 @@ nav.scrolled .nav-pill {
 }
 
 @media (max-width: 768px) {
+    .products-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    .psc-image {
+        height: 160px;
+        padding: 8px;
+    }
+    .psc-body {
+        padding: 0.8rem;
+        gap: 0.4rem;
+    }
+    .psc-body h3 {
+        font-size: 0.85rem;
+    }
+    .psc-body p {
+        font-size: 0.72rem;
+    }
+    .psc-badge {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
     .menu-toggle { display: block; }
     .quote-cta-btn { display: none; }
 
@@ -1095,6 +1229,27 @@ nav.scrolled .nav-pill {
     }
 
     .section { padding: 60px 5%; }
+
+    /* Why Choose Us Mobile Styles */
+    .why-us-list {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .why-us-row-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+        padding: 1.5rem;
+        border-radius: 18px;
+    }
+    
+    .why-us-infobar {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {

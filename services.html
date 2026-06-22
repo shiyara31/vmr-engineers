@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | VMR Engineers</title>
+    <meta name="description" content="Explore VMR Engineers' professional services: customized stainless steel water tanks, premium steel furniture, and industrial friction accessories. Precision-engineered solutions.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom Styles for Services Page */
+        .services-hero {
+            padding: 180px 10% 80px;
+            background: linear-gradient(135deg, #020b18 0%, #0a2540 50%, #0d1b2a 100%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .service-detail-section {
+            padding: 100px 10%;
+            background: #ffffff;
+        }
+
+        .service-detail-section:nth-child(even) {
+            background: var(--steel-light);
+        }
+
+        .service-detail-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-detail-section:nth-child(even) .service-detail-container {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .service-detail-content h2 {
+            font-size: 2.5rem;
+            color: var(--steel-dark);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .service-detail-content p {
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail-list {
+            list-style: none;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .service-detail-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: #2d3748;
+        }
+
+        .service-detail-list li i {
+            color: var(--logo-blue);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .service-detail-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 55px rgba(0,0,0,0.08);
+            background: #ffffff;
+            padding: 15px;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-detail-image img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1c75bc 100%);
+            padding: 80px 10%;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-box .btn {
+            background: #ffffff;
+            color: var(--logo-blue);
+            font-weight: 700;
+        }
+
+        .cta-box .btn:hover {
+            background: transparent;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        @media (max-width: 992px) {
+            .service-detail-container, .service-detail-section:nth-child(even) .service-detail-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .service-detail-image {
+                height: 300px;
+                order: -1; /* Image on top on tablets/mobile */
+            }
+            .service-detail-content h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 { font-size: 2.2rem; }
+            .services-hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-pill">
+            <a href="index.html#home" class="logo-link">
+                <img src="logo.png" alt="VMR Engineers Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="index.html#gallery">Products</a></li>
+                <li><a href="index.html#why-us">Why Choose Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="index.html#contact" class="quote-cta-btn">Get a Quote</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <header class="services-hero">
+        <h1 data-reveal="fade-down">Precision Stainless Steel Services</h1>
+        <p data-reveal="fade-up" style="transition-delay: 0.2s;">We deliver custom fabrication, industrial OEM manufacturing, and high-durability stainless steel products engineered exactly to your requirements.</p>
+    </header>
+
+    <!-- Service 1: Custom Water Tanks -->
+    <section class="service-detail-section" id="tanks">
+        <div class="service-detail-container">
+            <div class="service-detail-content" data-reveal="fade-right">
+                <h2>Custom Stainless Steel Water Tanks</h2>
+                <p>VMR Engineers is a premier manufacturer of food-grade stainless steel water tanks. We specialize in producing custom shapes, dimensions, and capacities (ranging from 500L up to 3000L and larger) tailored specifically to fit your site conditions.</p>
+                <p>Using premium Jindal 304 and 316 grade sheets, we ensure that stored water remains 100% safe, hygienic, and free from toxic chemical leaching or microplastic contamination.</p>
+                <ul class="service-detail-list">
+                    <li><i data-lucide="check"></i> <strong>Jindal 304/316 Grade Sheet:</strong> Premium raw material for outstanding rust and corrosion resistance.</li>
+                    <li><i data-lucide="check"></i> <strong>Custom Shapes &amp; Loft Fits:</strong> Engineered vertical, horizontal, loft, or custom corner models to fit any space.</li>
+                    <li><i data-lucide="check"></i> <strong>Safe Drinking Water:</strong> Protects stored water from heat absorption, chemical migration, and bacteria growth.</li>
+                </ul>
+            </div>
+            <div class="service-detail-image" data-reveal="fade-left">
+                <img src="water-tank.png" alt="Custom Stainless Steel Water Tank Service">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 2: SS Furniture -->
+    <section class="service-detail-section" id="furniture">
+        <div class="service-detail-container">
+            <div class="service-detail-image" data-reveal="fade-right">
+                <img src="furniture.png" alt="Stainless Steel Furniture Service">
+            </div>
+            <div class="service-detail-content" data-reveal="fade-left">
+                <h2>Stainless Steel Furniture Fabrication</h2>
+                <p>We fabricate high-grade stainless steel furniture for residential, medical, and corporate environments. By combining modern aesthetics with the virtually indestructible nature of premium steel, we deliver functional solutions built to last a lifetime.</p>
+                <p>Our capabilities include custom designer tables, medical cleanroom benches, heavy-duty storage racks, and institutional furniture built according to strict safety and sanitation standards.</p>
+                <ul class="service-detail-list">
+                    <li><i data-lucide="check"></i> <strong>Medical &amp; Lab Standards:</strong> Specialized cleanroom furniture with corrosion-proof surfaces suitable for heavy disinfection.</li>
+                    <li><i data-lucide="check"></i> <strong>High Structural Load capacity:</strong> Heavy-gauge stainless steel storage racks and workbenches.</li>
+                    <li><i data-lucide="check"></i> <strong>Elegant Polish &amp; Finish:</strong> Smooth seamless welds and premium surface finishing.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 3: Friction & Custom Fabrications -->
+    <section class="service-detail-section" id="custom">
+        <div class="service-detail-container">
+            <div class="service-detail-content" data-reveal="fade-right">
+                <h2>Friction Accessories &amp; OEM Custom Products</h2>
+                <p>As a leading national OEM manufacturer, VMR Engineers designs and produces high-precision friction accessories and customized stainless steel components. We partner with industries to fabricate components according to exact mechanical drawings and material grades.</p>
+                <p>Our facilities utilize advanced welding, bending, and cutting technologies to execute bulk industrial commissions, custom structural brackets, and specialized hardware parts.</p>
+                <ul class="service-detail-list">
+                    <li><i data-lucide="check"></i> <strong>Friction Accessories:</strong> Industrial grade friction components manufactured to extreme tolerances.</li>
+                    <li><i data-lucide="check"></i> <strong>Custom Fabrications:</strong> Bespoke brackets, steel enclosures, plates, and structural components.</li>
+                    <li><i data-lucide="check"></i> <strong>OEM Production:</strong> Reliable manufacturing partner for bulk, high-precision industrial outputs.</li>
+                </ul>
+            </div>
+            <div class="service-detail-image" data-reveal="fade-left">
+                <img src="hero.png" alt="Custom Stainless Steel Fabrications Service">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-box">
+        <h2 data-reveal="fade-up">Have a Custom Project in Mind?</h2>
+        <p data-reveal="fade-up" style="transition-delay: 0.1s;">Connect with our design and engineering team to discuss your customized dimensions and request an estimate.</p>
+        <a href="index.html#contact" class="btn" data-reveal="fade-up" style="transition-delay: 0.2s;">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo-box">
+            <img src="logo.png" alt="VMR Engineers Logo" class="footer-logo-img">
+        </div>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+            <p class="copyright">&copy; 2026 VMR Engineers. Precision in every weld.</p>
+        </div>
+
+        <!-- Meet the Developer -->
+        <div class="footer-developer">
+            <a href="https://www.instagram.com/intellex.web?igsh=MWZyenU0bWc3M2RxOQ==" target="_blank" rel="noopener noreferrer" class="developer-link">
+                <svg class="insta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                </svg>
+                Meet the Developer
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('menu-active');
+            navLinks.classList.toggle('active');
+            const isActive = navLinks.classList.contains('active');
+            menuIcon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('navbar');
+                nav.classList.remove('menu-active');
+                navLinks.classList.remove('active');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>
