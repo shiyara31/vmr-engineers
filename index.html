@@ -54,11 +54,11 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <!-- Desktop Background Video -->
-        <video autoplay muted loop playsinline disablePictureInPicture class="hero-video-bg desktop-video">
+        <video muted loop playsinline disablePictureInPicture class="hero-video-bg desktop-video">
             <source src="VMR_tank_animation_sequence_202606261604.mp4" type="video/mp4">
         </video>
         <!-- Mobile Background Video -->
-        <video autoplay muted loop playsinline disablePictureInPicture class="hero-video-bg mobile-video">
+        <video muted loop playsinline disablePictureInPicture class="hero-video-bg mobile-video">
             <source src="VMR_tank_animation_sequence_202606261617.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -441,11 +441,17 @@
             const hasPlayed = sessionStorage.getItem('splashPlayed');
             const splash = document.getElementById('splash-screen');
             const textEl = document.getElementById('splashText');
+            const videos = document.querySelectorAll('.hero-video-bg');
             
             if (hasPlayed === 'true') {
                 if (splash) splash.remove();
                 document.body.classList.remove('splash-active');
                 document.body.classList.add('splash-complete');
+                
+                // Start videos immediately for returning session users
+                videos.forEach(v => {
+                    v.play().catch(err => console.log('Autoplay blocked:', err));
+                });
             } else {
                 // Split text into spans for staggered letter animation
                 if (textEl) {
@@ -472,6 +478,11 @@
                     document.body.classList.remove('splash-active');
                     document.body.classList.add('splash-complete');
                     sessionStorage.setItem('splashPlayed', 'true');
+                    
+                    // Start videos exactly when splash vanishes
+                    videos.forEach(v => {
+                        v.play().catch(err => console.log('Video play failed:', err));
+                    });
                 }, 2800); // Wait for letter staggered animation and line to complete
 
                 setTimeout(() => {
