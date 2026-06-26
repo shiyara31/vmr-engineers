@@ -20,7 +20,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="#products">Services</a></li>
                 <li><a href="#gallery">Products</a></li>
                 <li><a href="#why-us">Why Choose Us</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -454,8 +454,6 @@
                 a.classList.remove('active');
                 const href = a.getAttribute('href');
                 if (href && href.startsWith('#') && href.substring(1) === current) {
-                    a.classList.add('active');
-                } else if (href && href.includes('services.html') && current === 'products') {
                     a.classList.add('active');
                 }
             });
