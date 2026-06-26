@@ -1432,7 +1432,7 @@ nav.scrolled .nav-pill {
         max-width: 100%;
         width: 100%;
         height: auto;
-        aspect-ratio: 16/9; /* Adapt to a perfect wide video format on mobile */
+        aspect-ratio: 1.2 / 1; /* Taller format to fill empty space and make it visually prominent on mobile */
     }
 
     .about-content h2 {
