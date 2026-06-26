@@ -9,7 +9,24 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="splash-active">
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="logo.png" alt="VMR Engineers Logo" class="splash-logo" id="splashLogo">
+            <h1 class="splash-text" id="splashText">VMR Engineering</h1>
+            <div class="splash-line" id="splashLine"></div>
+        </div>
+    </div>
+    <script>
+        // Immediate check to prevent flash for returning session users
+        if (sessionStorage.getItem('splashPlayed') === 'true') {
+            document.getElementById('splash-screen').style.display = 'none';
+            document.body.classList.remove('splash-active');
+            document.body.classList.add('splash-complete');
+        }
+    </script>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -419,6 +436,50 @@
     </footer>
 
     <script>
+        // Splash Screen Animation Controller
+        document.addEventListener('DOMContentLoaded', () => {
+            const hasPlayed = sessionStorage.getItem('splashPlayed');
+            const splash = document.getElementById('splash-screen');
+            const textEl = document.getElementById('splashText');
+            
+            if (hasPlayed === 'true') {
+                if (splash) splash.remove();
+                document.body.classList.remove('splash-active');
+                document.body.classList.add('splash-complete');
+            } else {
+                // Split text into spans for staggered letter animation
+                if (textEl) {
+                    const text = textEl.textContent.trim();
+                    textEl.innerHTML = text.split('').map((char, index) => {
+                        if (char === ' ') {
+                            return `<span class="splash-char space" style="animation-delay: ${index * 0.04}s">&nbsp;</span>`;
+                        }
+                        return `<span class="splash-char" style="animation-delay: ${index * 0.04}s">${char}</span>`;
+                    }).join('');
+                }
+
+                // Play animations sequentially
+                setTimeout(() => {
+                    document.body.classList.add('animate-splash');
+                }, 100);
+
+                setTimeout(() => {
+                    document.body.classList.add('animate-splash-text');
+                }, 1100); // 1s after logo begins
+
+                setTimeout(() => {
+                    if (splash) splash.classList.add('fade-out');
+                    document.body.classList.remove('splash-active');
+                    document.body.classList.add('splash-complete');
+                    sessionStorage.setItem('splashPlayed', 'true');
+                }, 2800); // Wait for letter staggered animation and line to complete
+
+                setTimeout(() => {
+                    if (splash) splash.remove();
+                }, 3600); // Complete removal from DOM after transition finishes
+            }
+        });
+
         lucide.createIcons();
 
         // Navbar scrolled state
