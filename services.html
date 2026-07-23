@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Custom Fabrication | VMR Engineers</title>
+    <meta name="description" content="Explore VMR Engineers' specialized fabrication services: Jindal 304/316 SS water tanks, premium steel furniture, commercial kitchenware, and architectural steel structures.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Editorial Service Page Custom Styles matching reference design */
+        .services-hero {
+            padding: 180px 10% 120px;
+            background: linear-gradient(135deg, #08162b 0%, #030a14 100%);
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .services-hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .services-hero .gold-bar {
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color, #c5a059);
+            margin: 1.5rem auto 0;
+        }
+
+        /* Editorial Section Wrapper */
+        .editorial-section {
+            background: #faf8f5;
+            padding: 100px 8% 140px;
+            position: relative;
+        }
+
+        .editorial-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 7rem;
+        }
+
+        /* Base Editorial Card */
+        .editorial-card {
+            position: relative;
+            display: grid;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Layout A: Image Left, Text Right */
+        .editorial-card.image-left {
+            grid-template-columns: 1.15fr 1fr;
+        }
+
+        /* Layout B: Text Left, Image Right */
+        .editorial-card.image-right {
+            grid-template-columns: 1fr 1.15fr;
+        }
+
+        /* Main Outer Wireframe Card Box */
+        .editorial-text-box {
+            position: relative;
+            border: 1.5px solid #1e293b;
+            padding: 3.5rem 3.5rem;
+            background: #ffffff;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.04);
+            z-index: 1;
+            min-height: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        /* Animated Gold Accent Line Sweep across Card Frame */
+        .editorial-text-box::before {
+            content: '';
+            position: absolute;
+            top: -1.5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c5a059 0%, #1c75bc 100%);
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 5;
+        }
+
+        .editorial-card:hover .editorial-text-box::before {
+            width: 100%;
+        }
+
+        .editorial-card:hover .editorial-text-box {
+            box-shadow: 0 15px 45px rgba(8, 22, 43, 0.09);
+            border-color: #c5a059;
+        }
+
+        .editorial-card.image-left .editorial-text-box {
+            padding-left: 6.5rem;
+            border-left: 1.5px solid #1e293b;
+        }
+
+        .editorial-card.image-right .editorial-text-box {
+            padding-right: 6.5rem;
+            border-right: 1.5px solid #1e293b;
+        }
+
+        /* Framed Overlapping Image Box with Gentle Float Animation */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-6px); }
+        }
+
+        .editorial-image-box {
+            position: relative;
+            z-index: 3;
+            border: 1.5px solid #1e293b;
+            background: #ffffff;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+            height: 400px;
+            animation: float-gentle 6s ease-in-out infinite;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .editorial-card:hover .editorial-image-box {
+            animation-play-state: paused;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 55px rgba(8, 22, 43, 0.22);
+            border-color: #c5a059;
+        }
+
+        .editorial-card.image-left .editorial-image-box {
+            margin-right: -5rem;
+            margin-top: -1.5rem;
+            margin-bottom: -1.5rem;
+        }
+
+        .editorial-card.image-right .editorial-image-box {
+            margin-left: -5rem;
+            margin-top: -1.5rem;
+            margin-bottom: -1.5rem;
+        }
+
+        .editorial-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .editorial-card:hover .editorial-image-box img {
+            transform: scale(1.08);
+        }
+
+        /* Content Styling */
+        .service-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #c5a059;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        @keyframes tag-pulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.65; }
+        }
+
+        .editorial-card:hover .service-tag {
+            animation: tag-pulse 2s ease-in-out infinite;
+        }
+
+        .editorial-text-box h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #0f172a;
+            line-height: 1.12;
+            margin-bottom: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .editorial-card:hover .editorial-text-box h2 {
+            color: #08162b;
+        }
+
+        .editorial-text-box p {
+            font-size: 1.02rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .feature-bullets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin-bottom: 2.2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-bullets li {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .feature-bullets li:hover {
+            transform: translateX(4px);
+            color: #c5a059;
+        }
+
+        .feature-bullets li i {
+            color: #c5a059;
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .feature-bullets li:hover i {
+            transform: scale(1.25) rotate(10deg);
+        }
+
+        /* Solid Dark Rectangular Button matching reference design */
+        .editorial-btn {
+            background: #0f172a;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 0.9rem 2.2rem;
+            border: 1.5px solid #0f172a;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .editorial-btn:hover {
+            background: #c5a059;
+            border-color: #c5a059;
+            color: #08162b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .editorial-btn i {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .editorial-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Responsive Side-by-Side Overlapping Layout for Mobile Screens */
+        @media (max-width: 992px) {
+            .editorial-section {
+                padding: 50px 15px 80px;
+            }
+
+            .editorial-container {
+                gap: 4rem;
+            }
+
+            .editorial-card {
+                display: grid !important;
+                align-items: center !important;
+            }
+
+            .editorial-card.image-left {
+                grid-template-columns: 1fr 1.25fr !important;
+            }
+
+            .editorial-card.image-right {
+                grid-template-columns: 1.25fr 1fr !important;
+            }
+
+            .editorial-text-box {
+                padding: 1.8rem 1.4rem !important;
+                min-height: auto !important;
+                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+                order: unset !important;
+            }
+
+            .editorial-card.image-left .editorial-text-box {
+                padding-left: 2.5rem !important;
+                border-left: 1.5px solid #1e293b !important;
+            }
+
+            .editorial-card.image-right .editorial-text-box {
+                padding-right: 2.5rem !important;
+                border-right: 1.5px solid #1e293b !important;
+            }
+
+            .editorial-image-box {
+                height: 210px !important;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+                order: unset !important;
+            }
+
+            .editorial-card.image-left .editorial-image-box {
+                margin-right: -2.2rem !important;
+                margin-top: -0.8rem !important;
+                margin-bottom: -0.8rem !important;
+                margin-left: 0 !important;
+            }
+
+            .editorial-card.image-right .editorial-image-box {
+                margin-left: -2.2rem !important;
+                margin-top: -0.8rem !important;
+                margin-bottom: -0.8rem !important;
+                margin-right: 0 !important;
+            }
+
+            .service-tag {
+                font-size: 0.65rem !important;
+                letter-spacing: 1.5px !important;
+                margin-bottom: 0.4rem !important;
+            }
+
+            .editorial-text-box h2 {
+                font-size: 1.2rem !important;
+                letter-spacing: 1px !important;
+                line-height: 1.18 !important;
+                margin-bottom: 0.6rem !important;
+            }
+
+            .editorial-text-box p {
+                font-size: 0.82rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 0.8rem !important;
+            }
+
+            .feature-bullets {
+                gap: 0.3rem 0.6rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            .feature-bullets li {
+                font-size: 0.75rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .editorial-section {
+                padding: 35px 8px 60px;
+            }
+
+            .editorial-container {
+                gap: 3rem;
+            }
+
+            .editorial-card.image-left {
+                grid-template-columns: 0.9fr 1.2fr !important;
+            }
+
+            .editorial-card.image-right {
+                grid-template-columns: 1.2fr 0.9fr !important;
+            }
+
+            .editorial-image-box {
+                height: 170px !important;
+            }
+
+            .editorial-text-box {
+                padding: 1.2rem 1rem !important;
+            }
+
+            .editorial-card.image-left .editorial-text-box {
+                padding-left: 1.8rem !important;
+            }
+
+            .editorial-card.image-right .editorial-text-box {
+                padding-right: 1.8rem !important;
+            }
+
+            .editorial-card.image-left .editorial-image-box {
+                margin-right: -1.6rem !important;
+            }
+
+            .editorial-card.image-right .editorial-image-box {
+                margin-left: -1.6rem !important;
+            }
+
+            .editorial-text-box h2 {
+                font-size: 1rem !important;
+            }
+
+            .editorial-text-box p {
+                font-size: 0.76rem !important;
+                line-height: 1.35 !important;
+            }
+        }
+
+        /* CTA Section */
+        .service-cta-banner {
+            background: linear-gradient(135deg, #08162b 0%, #030a14 100%);
+            padding: 90px 10%;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .service-cta-banner h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .service-cta-banner p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn-gold {
+            background: #c5a059;
+            color: #08162b;
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-gold:hover {
+            background: #ffffff;
+            color: #08162b;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Specification Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 22, 43, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            border: 1.5px solid #1e293b;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            transform: translateY(30px);
+            transition: transform 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: #f1f5f9;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #0f172a;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .modal-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .modal-specs {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .modal-specs th, .modal-specs td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .modal-specs th {
+            background: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-pill">
+            <a href="index.html#home" class="logo-link">
+                <img src="logo.png" alt="VMR Engineers Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="index.html#gallery">Products</a></li>
+                <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="index.html#contact" class="quote-cta-btn">Get a Quote</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Subpage Hero -->
+    <section class="services-hero">
+        <span class="service-tag">ENGINEERING EXCELLENCE</span>
+        <h1>OUR SERVICES</h1>
+        <p>VMR Engineers specializes in custom stainless steel fabrication combining authentic Jindal 304/316 grade materials, automated technology, and master craftsmanship.</p>
+        <div class="gold-bar"></div>
+    </section>
+
+    <!-- Editorial Staggered Layout Section (Matching Reference Image) -->
+    <section class="editorial-section">
+        <div class="editorial-container">
+
+            <!-- SERVICE CARD 1: Image Left, Text Right -->
+            <div class="editorial-card image-left" data-reveal="fade-up">
+                <!-- Overlapping Image Box -->
+                <div class="editorial-image-box">
+                    <img src="service_water_tank.png" alt="Stainless Steel Water Tanks">
+                </div>
+                <!-- Main Outer Wireframe Text Box -->
+                <div class="editorial-text-box">
+                    <div>
+                        <span class="service-tag">01 / STORAGE SOLUTIONS</span>
+                        <h2>STAINLESS STEEL WATER TANKS</h2>
+                        <p>Food-grade custom stainless steel water tanks engineered using authentic Jindal 304 and 316 grade sheets. Guaranteed 100% leak-proof, chemical-free, and built for lifetime hygienic water storage.</p>
+                        <ul class="feature-bullets">
+                            <li><i data-lucide="check-circle"></i> Jindal 304/316 Steel</li>
+                            <li><i data-lucide="check-circle"></i> Vertical & Horizontal</li>
+                            <li><i data-lucide="check-circle"></i> 500L to 10,000L+</li>
+                            <li><i data-lucide="check-circle"></i> Food-Grade Standard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICE CARD 2: Text Left, Image Right -->
+            <div class="editorial-card image-right" data-reveal="fade-up">
+                <!-- Main Outer Wireframe Text Box -->
+                <div class="editorial-text-box">
+                    <div>
+                        <span class="service-tag">02 / INTERIOR & INDUSTRIAL</span>
+                        <h2>STAINLESS STEEL FURNITURE</h2>
+                        <p>Aesthetic, heavy-duty steel furniture built for modern residences, corporate offices, healthcare facilities, and specialized cleanrooms. Seamless mirror and brushed satin finishes that never rust.</p>
+                        <ul class="feature-bullets">
+                            <li><i data-lucide="check-circle"></i> Cleanroom Rated</li>
+                            <li><i data-lucide="check-circle"></i> Ergonomic Desks & Racks</li>
+                            <li><i data-lucide="check-circle"></i> Heavy Load Capacity</li>
+                            <li><i data-lucide="check-circle"></i> Zero Corrosion Risk</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Overlapping Image Box -->
+                <div class="editorial-image-box">
+                    <img src="service_furniture.png" alt="Stainless Steel Furniture">
+                </div>
+            </div>
+
+            <!-- SERVICE CARD 3: Image Left, Text Right -->
+            <div class="editorial-card image-left" data-reveal="fade-up">
+                <!-- Overlapping Image Box -->
+                <div class="editorial-image-box">
+                    <img src="service_fabrication.png" alt="Commercial Kitchenware & Fabrication">
+                </div>
+                <!-- Main Outer Wireframe Text Box -->
+                <div class="editorial-text-box">
+                    <div>
+                        <span class="service-tag">03 / COMMERCIAL EQUIPMENT</span>
+                        <h2>COMMERCIAL KITCHENWARE</h2>
+                        <p>Heavy-duty commercial kitchen equipment, work tables, storage racks, and custom stainless steel counter solutions tailored for high-volume restaurants, hotels, and institutional kitchens.</p>
+                        <ul class="feature-bullets">
+                            <li><i data-lucide="check-circle"></i> Industrial Kitchen Grade</li>
+                            <li><i data-lucide="check-circle"></i> Custom Work Counters</li>
+                            <li><i data-lucide="check-circle"></i> Easy Clean Hygiene</li>
+                            <li><i data-lucide="check-circle"></i> Heat Resistant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICE CARD 4: Text Left, Image Right -->
+            <div class="editorial-card image-right" data-reveal="fade-up">
+                <!-- Main Outer Wireframe Text Box -->
+                <div class="editorial-text-box">
+                    <div>
+                        <span class="service-tag">04 / CUSTOM ENGINEERING</span>
+                        <h2>STRUCTURAL FABRICATION</h2>
+                        <p>Tailor-made architectural steel railings, industrial platform structures, pressure vessels, and specialized engineering components custom fabricated strictly to engineering specifications.</p>
+                        <ul class="feature-bullets">
+                            <li><i data-lucide="check-circle"></i> Precision TIG/MIG Welding</li>
+                            <li><i data-lucide="check-circle"></i> CAD/CAM Custom Shapes</li>
+                            <li><i data-lucide="check-circle"></i> Architectural Railings</li>
+                            <li><i data-lucide="check-circle"></i> Rigorous Quality Audits</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Overlapping Image Box -->
+                <div class="editorial-image-box">
+                    <img src="hero-forest-tanks.jpeg" alt="Structural Steel Fabrication">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Service Call to Action Banner -->
+    <section class="service-cta-banner">
+        <h2>REQUIRE A CUSTOM FABRICATION SPECIFICATION?</h2>
+        <p>Our engineering team consults on custom capacities, space blueprints, and specialized material grades for your commercial or residential projects.</p>
+        <a href="index.html#contact" class="cta-btn-gold">Request Technical Consultation</a>
+    </section>
+
+    <!-- Interactive Detail Modal -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <span class="service-tag" id="modalCategory">TECHNICAL SPECIFICATIONS</span>
+            <h2 class="modal-title" id="modalTitle">Service Details</h2>
+            <p id="modalDescription" style="color:#475569; line-height:1.6; margin-bottom:1.5rem;"></p>
+            
+            <table class="modal-specs" id="modalSpecs">
+                <!-- Dynamically populated spec rows -->
+            </table>
+
+            <div style="margin-top:2rem; text-align:right;">
+                <a href="index.html#contact" class="editorial-btn" style="text-decoration:none;">
+                    ENQUIRE NOW <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo-box">
+            <img src="logo.png" alt="VMR Engineers Logo" class="footer-logo-img">
+        </div>
+        
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+        
+        <div class="footer-bottom-bar">
+            <div class="footer-legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="copyright">&copy; 2026 VMR Engineers. Precision in every weld.</p>
+        </div>
+
+        <div class="footer-developer">
+            <a href="https://www.instagram.com/intellex.web?igsh=MWZyenU0bWc3M2RxOQ==" target="_blank" rel="noopener noreferrer" class="developer-link">
+                <svg class="insta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                </svg>
+                Meet the Developer
+            </a>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/919000012345" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32">
+            <path fill="#ffffff" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Navbar scrolled state
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('menu-active');
+            navLinks.classList.toggle('active');
+            const isActive = navLinks.classList.contains('active');
+            menuIcon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        // Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+        // Modal Specifications Data
+        const serviceData = {
+            tanks: {
+                category: "STORAGE SPECIFICATIONS",
+                title: "Stainless Steel Water Tanks",
+                description: "VMR Engineers manufactures food-grade stainless steel tanks using Jindal 304 & 316 grade steel. Designed for extreme durability, non-toxic water preservation, and weather resistance.",
+                specs: [
+                    ["Material Grade", "Authentic Jindal 304 / 316 Stainless Steel"],
+                    ["Available Capacities", "500 L, 1000 L, 1500 L, 2000 L, 3000 L, up to 15,000 L+"],
+                    ["Design Options", "Vertical Cylindrical, Horizontal, Square & Panel Tanks"],
+                    ["Sheet Thickness", "0.8mm to 3.0mm based on volume load"],
+                    ["Warranty", "10-Year Anti-Corrosion Lifetime Assurance"]
+                ]
+            },
+            furniture: {
+                category: "FURNITURE SPECIFICATIONS",
+                title: "Stainless Steel Furniture",
+                description: "Engineered furniture for high-durability environments such as corporate offices, medical facilities, cleanrooms, and contemporary residential spaces.",
+                specs: [
+                    ["Material Grade", "SS 304 / SS 316 Mirror & Satin Finish"],
+                    ["Product Range", "Desks, Racks, Cleanroom Benches, Cabinets & Shelving"],
+                    ["Load Capacity", "Tested up to 500kg uniform distributed load"],
+                    ["Hygiene Standard", "100% Anti-Microbial & Easily Sanitizable Surface"],
+                    ["Customization", "Built to architectural CAD measurements"]
+                ]
+            },
+            kitchenware: {
+                category: "KITCHEN EQUIPMENT SPECIFICATIONS",
+                title: "Commercial Kitchenware & Counters",
+                description: "Hygienic, high-heat resistant stainless steel counters, prep tables, exhaust hoods, and storage units for commercial hospitality and food processing.",
+                specs: [
+                    ["Material Grade", "Food-Grade SS 304"],
+                    ["Counter Thickness", "1.2mm to 2.0mm reinforced steel top"],
+                    ["Applications", "Hotels, Restaurants, Hospitals, Catering Facilities"],
+                    ["Features", "Sound-deadened undershelves & adjustable bullet feet"],
+                    ["Compliance", "HACCP & Food Safety Standard Compliant"]
+                ]
+            },
+            structural: {
+                category: "FABRICATION SPECIFICATIONS",
+                title: "Structural & Architectural Steel",
+                description: "Custom structural steel frame fabrications, stair railings, industrial platforms, and custom components crafted to strict engineering tolerances.",
+                specs: [
+                    ["Material Options", "SS 304, SS 316, Structural Mild Steel"],
+                    ["Welding Process", "Automated TIG / MIG Precision Arc Welding"],
+                    ["Finish", "Satin Polish, High Mirror, Powder Coated, Mill Finish"],
+                    ["Quality Control", "100% Radiographic / Dye Penetrant Weld Testing"],
+                    ["Customization", "Fully customized to structural engineer blueprints"]
+                ]
+            }
+        };
+
+        function openModal(key) {
+            const data = serviceData[key];
+            if (!data) return;
+
+            document.getElementById('modalCategory').textContent = data.category;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalDescription').textContent = data.description;
+
+            const table = document.getElementById('modalSpecs');
+            table.innerHTML = data.specs.map(row => `
+                <tr>
+                    <th>${row[0]}</th>
+                    <td>${row[1]}</td>
+                </tr>
+            `).join('');
+
+            document.getElementById('serviceModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('serviceModal').classList.remove('active');
+        }
+
+        document.getElementById('serviceModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('serviceModal')) closeModal();
+        });
+    </script>
+</body>
+</html>
