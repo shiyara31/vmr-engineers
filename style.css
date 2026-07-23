@@ -2032,7 +2032,7 @@ body.splash-complete .hero-content {
    ============================================ */
 .editorial-section {
     background: #faf8f5;
-    padding: 80px 6% 120px;
+    padding: 80px 6% 145px;
     position: relative;
 }
 
@@ -2271,7 +2271,7 @@ body.splash-complete .hero-content {
 /* Responsive Side-by-Side Overlapping Layout for Mobile Screens */
 @media (max-width: 992px) {
     .editorial-section {
-        padding: 50px 15px 80px;
+        padding: 50px 15px 145px !important;
     }
 
     .editorial-container {
@@ -2359,7 +2359,7 @@ body.splash-complete .hero-content {
 
 @media (max-width: 480px) {
     .editorial-section {
-        padding: 35px 8px 60px;
+        padding: 35px 8px 135px !important;
     }
 
     .editorial-container {
