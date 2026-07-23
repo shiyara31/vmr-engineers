@@ -1502,10 +1502,10 @@ nav.scrolled .nav-pill {
     }
     .curve-divider,
     .curve-divider svg {
-        height: 145px !important;
+        height: 105px !important;
     }
     .hero-content {
-        bottom: 145px !important;
+        bottom: 105px !important;
         padding: 0 1rem;
         width: 100%;
     }
@@ -1621,7 +1621,7 @@ nav.scrolled .nav-pill {
     }
 
     #about {
-        padding: 45px 5% 75px !important;
+        padding: 45px 5% 150px !important;
     }
 
     .about-top-banner {
@@ -1761,10 +1761,10 @@ nav.scrolled .nav-pill {
     }
     .curve-divider,
     .curve-divider svg {
-        height: 135px !important;
+        height: 95px !important;
     }
     .hero-content {
-        bottom: 135px !important;
+        bottom: 95px !important;
     }
     .hero-content h1 { font-size: 2rem; }
     .hero-content p { font-size: 0.9rem; }
