@@ -2029,7 +2029,11 @@ flex: 1;
     .hero {
         min-height: 100vh;
         min-height: 100dvh;
-        padding: 120px 5% 140px;
+        padding: 110px 5% 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .hero-video-bg,
@@ -2048,9 +2052,11 @@ flex: 1;
     }
 
     .hero-content {
-        bottom: 105px !important;
+        bottom: 0 !important;
+        transform: none !important;
         padding: 0 1rem;
         width: 100%;
+        margin-top: 15px;
     }
 
     .products-image-wrapper {
@@ -2124,14 +2130,22 @@ flex: 1;
         z-index: 1002;
     }
 
+    .hero-main-title,
     .hero-content h1 {
-        font-size: 2.5rem;
-        line-height: 1.1;
+        font-size: 2.2rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 0.75rem !important;
     }
 
+    .hero-sub-title,
     .hero-content p {
-        font-size: 0.95rem;
-        margin-bottom: 2rem;
+        font-size: 0.92rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-brand-title {
+        font-size: 1.75rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .hero-btns {
@@ -2294,6 +2308,7 @@ flex: 1;
     .hero {
         min-height: 100vh;
         min-height: 100dvh;
+        padding: 100px 4% 110px;
     }
 
     .hero-video-bg,
@@ -2310,15 +2325,27 @@ flex: 1;
     }
 
     .hero-content {
-        bottom: 95px !important;
+        bottom: 0 !important;
+        transform: none !important;
+        margin-top: 10px;
     }
 
+    .hero-main-title,
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.85rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 0.6rem !important;
     }
 
+    .hero-sub-title,
     .hero-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .hero-brand-title {
+        font-size: 1.45rem !important;
+        margin-bottom: 0.8rem !important;
     }
 
     .product-card .product-info {

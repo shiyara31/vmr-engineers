@@ -216,10 +216,16 @@
         }
 
         @media (max-width: 768px) {
-            .subpage-hero h1 { font-size: 2.2rem; }
-            .subpage-hero p { font-size: 1rem; }
+            .subpage-hero { padding: 125px 5% 70px !important; }
+            .subpage-hero h1 { font-size: 2.1rem !important; }
+            .subpage-hero p { font-size: 0.95rem !important; }
             .details-grid { grid-template-columns: 1fr; gap: 2rem; }
             .details-content h2 { font-size: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .subpage-hero { padding: 110px 4% 60px !important; }
+            .subpage-hero h1 { font-size: 1.75rem !important; }
+            .subpage-hero p { font-size: 0.88rem !important; }
         }
     </style>
 </head>
