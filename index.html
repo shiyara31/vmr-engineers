@@ -69,26 +69,17 @@
         </video>
         <div class="hero-overlay"></div>
         
-        <div class="hero-content animate-words">
+        <div class="hero-content">
             <h1 class="hero-main-title">
-                <span class="hero-word" style="animation-delay: 0.1s;">Pure</span> 
-                <span class="hero-word" style="animation-delay: 0.22s;">Water</span><br>
-                <span class="hero-word" style="animation-delay: 0.38s;">Built</span> 
-                <span class="hero-word" style="animation-delay: 0.48s;">to</span> 
-                <span class="hero-word" style="animation-delay: 0.58s;">Last</span>
+                Pure Water<br>Built to Last
             </h1>
             <p class="hero-sub-title">
-                <span class="hero-word" style="animation-delay: 0.72s;">Premium</span> 
-                <span class="hero-word" style="animation-delay: 0.82s;">Stainless</span> 
-                <span class="hero-word" style="animation-delay: 0.92s;">Steel</span> 
-                <span class="hero-word" style="animation-delay: 1.02s;">Water</span> 
-                <span class="hero-word" style="animation-delay: 1.12s;">Tanks</span>
+                Premium Stainless Steel Water Tanks
             </p>
             <h2 class="hero-brand-title">
-                <span class="hero-word" style="animation-delay: 1.25s;">VMR</span> 
-                <span class="hero-word" style="animation-delay: 1.38s;">Engineers</span>
+                VMR Engineers
             </h2>
-            <div class="hero-cta-group hero-word" style="animation-delay: 1.55s;">
+            <div class="hero-cta-group">
                 <a href="#contact" class="btn btn-hero-cta">Contact Us <i data-lucide="arrow-right" style="width:16px;"></i></a>
             </div>
         </div>
@@ -550,46 +541,56 @@
                 });
             };
 
-            // Hero Text Word-by-Word Entrance & 3-Second Fade Out Synchronization
-            let lastVideoTime = 0;
-
+            // Hero Text Animation & Scene Timing matching Reference Video
             const updateHeroTextOpacity = () => {
                 const activeVideo = (window.innerWidth > 768) 
                     ? document.querySelector('.desktop-video') 
                     : document.querySelector('.mobile-video');
-                const heroContent = document.querySelector('.hero-content');
+                const heroTitleGroup = document.querySelectorAll('.hero-main-title, .hero-sub-title, .hero-brand-title');
 
-                if (!activeVideo || !heroContent || !activeVideo.duration) return;
+                if (!activeVideo || !heroTitleGroup.length || !activeVideo.duration) return;
 
                 const currentTime = activeVideo.currentTime;
 
-                // Detect video loop restart (resets to start) -> replay word-by-word animation
-                if (currentTime < lastVideoTime && currentTime < 0.5) {
-                    heroContent.classList.remove('animate-words');
-                    void heroContent.offsetWidth; // Force DOM reflow
-                    heroContent.classList.add('animate-words');
-                }
-                lastVideoTime = currentTime;
+                // Timings matching Reference Video:
+                // 0.0s - 3.2s: Initial house & tank intro (Text hidden, CTA button visible at bottom)
+                // 3.2s - 4.2s: Text animates in smoothly over water tank scene
+                // 4.2s - 7.6s: Text fully visible over water tank
+                // 7.6s - 8.3s: Text smoothly fades out before 3D VMR logo reveal
+                // 8.3s - 9.6s: Text completely hidden for 3D VMR logo reveal scene!
 
-                // Word entrance completes around 1.2s -> Stay fully visible for 2.0s -> Fade out between 3.2s and 4.0s
-                const fadeOutStart = 3.2;
-                const fadeOutEnd = 4.0;
+                const textAppearStart = 3.2;
+                const textAppearEnd = 4.2;
+                const textFadeStart = 7.6;
+                const textFadeEnd = 8.3;
 
-                if (currentTime >= fadeOutStart) {
-                    if (currentTime >= fadeOutEnd) {
-                        heroContent.style.opacity = '0';
-                        heroContent.style.transform = 'translateY(25px)';
-                        heroContent.style.pointerEvents = 'none';
-                    } else {
-                        const progress = (fadeOutEnd - currentTime) / (fadeOutEnd - fadeOutStart);
-                        const clampedProgress = Math.max(0, Math.min(1, progress));
-                        heroContent.style.opacity = clampedProgress.toFixed(3);
-                        heroContent.style.transform = `translateY(${(1 - clampedProgress) * 20}px)`;
-                        if (clampedProgress < 0.1) heroContent.style.pointerEvents = 'none';
-                    }
+                if (currentTime < textAppearStart) {
+                    heroTitleGroup.forEach(el => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(20px)';
+                    });
+                } else if (currentTime >= textAppearStart && currentTime < textAppearEnd) {
+                    const progress = (currentTime - textAppearStart) / (textAppearEnd - textAppearStart);
+                    heroTitleGroup.forEach(el => {
+                        el.style.opacity = progress.toFixed(3);
+                        el.style.transform = `translateY(${(1 - progress) * 20}px)`;
+                    });
+                } else if (currentTime >= textAppearEnd && currentTime < textFadeStart) {
+                    heroTitleGroup.forEach(el => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    });
+                } else if (currentTime >= textFadeStart && currentTime < textFadeEnd) {
+                    const progress = (textFadeEnd - currentTime) / (textFadeEnd - textFadeStart);
+                    heroTitleGroup.forEach(el => {
+                        el.style.opacity = Math.max(0, progress).toFixed(3);
+                        el.style.transform = `translateY(${(1 - progress) * 22}px)`;
+                    });
                 } else {
-                    heroContent.style.opacity = '1';
-                    heroContent.style.pointerEvents = 'auto';
+                    heroTitleGroup.forEach(el => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(22px)';
+                    });
                 }
             };
 
