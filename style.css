@@ -244,11 +244,11 @@ nav.scrolled .nav-pill {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    padding: 160px 10% 180px;
+    padding: 120px 5% 100px;
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     color: #ffffff;
     text-align: center;
@@ -280,66 +280,75 @@ nav.scrolled .nav-pill {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Neutral, transparent gradient that lets the original video colors stand out vividly, with subtle darkening at the edges for contrast */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.4) 100%);
+    /* Subtle overlay gradient to ensure high readability for white text over video */
+    background: linear-gradient(to bottom, rgba(4, 14, 30, 0.4) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(4, 14, 30, 0.55) 100%);
     z-index: 2;
 }
 
 .hero-content {
-    position: absolute;
-    bottom: 60px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
+    position: relative;
     z-index: 11;
-    max-width: 850px;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-hero-cta {
-    background: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
+/* Staggered Word-by-Word Entrance Animation */
+.animate-words .hero-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(22px) scale(0.94);
+    animation: wordEntrance 0.65s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-.hero-subtitle {
-    color: var(--accent-color);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    display: block;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+@keyframes wordEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.94);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
 }
 
-.hero-title-main {
-    font-family: 'Outfit', sans-serif;
+.hero-main-title {
+    font-family: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
     font-size: 5rem;
+    font-weight: 500;
     color: #ffffff;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-    text-transform: none;
-    font-weight: 700;
-    letter-spacing: -1px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.1;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
-.hero-title-accent {
-    color: var(--accent-color);
+.hero-sub-title {
+    font-family: 'Inter', 'Outfit', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-.hero-desc-text {
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2.5rem;
-    max-width: 720px;
-    line-height: 1.6;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+.hero-brand-title {
+    font-family: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 3.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 2.2rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
 }
 
 .hero-cta-group {
@@ -347,6 +356,32 @@ nav.scrolled .nav-pill {
     gap: 1.2rem;
     align-items: center;
     justify-content: center;
+}
+
+/* Translucent Pill Contact Us CTA Button matching reference image */
+.btn-hero-cta {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: #08162b !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 2.2rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-hero-cta:hover {
+    background: #ffffff !important;
+    color: #1c75bc !important;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
 .btn {
@@ -874,6 +909,50 @@ nav.scrolled .nav-pill {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Desktop Only - Enhanced Text Sizes for About Us Section */
+@media (min-width: 993px) {
+    .about-top-banner .subtitle {
+        font-size: 1.05rem !important;
+        padding: 8px 24px !important;
+        letter-spacing: 4.5px !important;
+    }
+
+    .about-main-heading {
+        font-size: 3.3rem !important;
+        line-height: 1.22 !important;
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .about-badge {
+        font-size: 1.02rem !important;
+        padding: 9px 22px !important;
+    }
+
+    #about .about-content p {
+        font-size: 1.32rem !important;
+        line-height: 1.8 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .sub-stat-number {
+        font-size: 2.35rem !important;
+    }
+
+    .sub-stat-label {
+        font-size: 0.96rem !important;
+    }
+
+    .feature-small h4 {
+        font-size: 1.35rem !important;
+    }
+
+    .feature-small p {
+        font-size: 1.1rem !important;
+        line-height: 1.65 !important;
+    }
+}
+
 /* ============================================
    WHY CHOOSE US — Hanging Paper Cards
    ============================================ */
@@ -1084,20 +1163,359 @@ nav.scrolled .nav-pill {
     transition: var(--transition);
 }
 
-.products-image-wrapper:hover {
-    transform: translateY(-4px);
-    box-shadow: 
-        0 25px 65px rgba(0, 0, 0, 0.7),
-        0 0 40px rgba(28, 117, 188, 0.3);
-    border-color: rgba(197, 160, 89, 0.35);
+/* ==========================================================================
+   OUR PRODUCTS SHOWCASE SECTION (#gallery)
+   ========================================================================== */
+
+#gallery .section-subtitle {
+    display: block;
+    color: var(--logo-blue, #1c75bc);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
-.products-full-image {
+/* Category Filter Tabs */
+.product-filter-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, #1c75bc 0%, #0d4b80 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(28, 117, 188, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Products Container & Cards Grid */
+.products-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.product-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 2.25rem;
+}
+
+/* Clean Picture Card (Soft Faded Edge & Outline) */
+.product-picture-card {
+    background: #031124;
+    border: 1px solid rgba(255, 255, 255, 0.04); /* Faded, barely visible subtle border */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    aspect-ratio: 16 / 10;
+}
+
+/* Soft Inner Vignette Overlay to Fade Card Image Outlines */
+.product-picture-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    box-shadow: inset 0 0 28px rgba(2, 14, 33, 0.75);
+    pointer-events: none;
+    z-index: 3;
+    transition: box-shadow 0.4s ease;
+}
+
+/* Metallic Shimmer Light Sweep on Hover */
+.product-picture-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.22) 50%,
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 5;
+    pointer-events: none;
+    transition: left 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-picture-card:hover::before {
+    left: 150%;
+}
+
+.product-picture-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(197, 160, 89, 0.25); /* Faded soft gold glow */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(28, 117, 188, 0.2);
+}
+
+.product-picture-card:hover::after {
+    box-shadow: inset 0 0 18px rgba(2, 14, 33, 0.4);
+}
+
+.product-picture-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-picture-card:hover .product-picture-img {
+    transform: scale(1.05);
+}
+
+.picture-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 15, 33, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+}
+
+.product-picture-card:hover .picture-card-overlay {
+    opacity: 1;
+}
+
+.zoom-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #061121;
+    padding: 0.65rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.product-picture-card:hover .zoom-btn {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   CLEAN IMAGE LIGHTBOX MODAL
+   ========================================================================== */
+.product-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(2, 8, 20, 0.92);
+    backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.product-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-modal-content.clean-modal {
+    background: transparent;
+    border: none;
+    max-width: 1100px;
+    width: 100%;
+    max-height: 92vh;
+    position: relative;
+    box-shadow: none;
+    transform: scale(0.94);
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-modal-overlay.active .product-modal-content.clean-modal {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+.modal-close-btn:hover {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+.modal-image-only-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-full-banner-img {
+    max-width: 100%;
+    max-height: 85vh;
     object-fit: contain;
     border-radius: 16px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9), 0 0 50px rgba(28, 117, 188, 0.4);
+}
+
+/* Responsive 2x3 Column Grid for Mobile View */
+@media (max-width: 768px) {
+    #gallery {
+        padding: 50px 3% 100px;
+    }
+
+    .products-container {
+        padding: 0.5rem 0;
+    }
+
+    .product-cards-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.85rem !important;
+    }
+
+    .product-picture-card {
+        border-radius: 14px !important;
+        aspect-ratio: 16 / 10 !important;
+    }
+
+    .zoom-btn {
+        padding: 0.45rem 0.8rem !important;
+        font-size: 0.72rem !important;
+        border-radius: 20px !important;
+    }
+
+    .zoom-btn i, .zoom-btn svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .product-filter-tabs {
+        gap: 0.4rem !important;
+        margin-top: 1.25rem !important;
+    }
+
+    .filter-btn {
+        padding: 0.45rem 0.95rem !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery {
+        padding: 40px 2% 90px;
+    }
+
+    .product-cards-grid {
+        gap: 0.65rem !important;
+    }
+
+    .product-picture-card {
+        border-radius: 10px !important;
+    }
+
+    .zoom-btn {
+        padding: 0.35rem 0.65rem !important;
+        font-size: 0.65rem !important;
+    }
+}
+
+.modal-info-panel p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.modal-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modal-hl-item {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-hl-item i,
+.modal-hl-item svg {
+    color: #39b54a;
+    width: 16px;
+    height: 16px;
+}
+
+.modal-cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
 }
     flex: 1;
 }

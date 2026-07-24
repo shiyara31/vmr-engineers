@@ -14,6 +14,9 @@
             background: linear-gradient(135deg, #050d1a 0%, #08162b 40%, #0d284c 75%, #030914 100%) !important;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -66,8 +69,26 @@
         </video>
         <div class="hero-overlay"></div>
         
-        <div class="hero-content" data-reveal="fade-up">
-            <div class="hero-cta-group">
+        <div class="hero-content animate-words">
+            <h1 class="hero-main-title">
+                <span class="hero-word" style="animation-delay: 0.1s;">Pure</span> 
+                <span class="hero-word" style="animation-delay: 0.22s;">Water</span><br>
+                <span class="hero-word" style="animation-delay: 0.38s;">Built</span> 
+                <span class="hero-word" style="animation-delay: 0.48s;">to</span> 
+                <span class="hero-word" style="animation-delay: 0.58s;">Last</span>
+            </h1>
+            <p class="hero-sub-title">
+                <span class="hero-word" style="animation-delay: 0.72s;">Premium</span> 
+                <span class="hero-word" style="animation-delay: 0.82s;">Stainless</span> 
+                <span class="hero-word" style="animation-delay: 0.92s;">Steel</span> 
+                <span class="hero-word" style="animation-delay: 1.02s;">Water</span> 
+                <span class="hero-word" style="animation-delay: 1.12s;">Tanks</span>
+            </p>
+            <h2 class="hero-brand-title">
+                <span class="hero-word" style="animation-delay: 1.25s;">VMR</span> 
+                <span class="hero-word" style="animation-delay: 1.38s;">Engineers</span>
+            </h2>
+            <div class="hero-cta-group hero-word" style="animation-delay: 1.55s;">
                 <a href="#contact" class="btn btn-hero-cta">Contact Us <i data-lucide="arrow-right" style="width:16px;"></i></a>
             </div>
         </div>
@@ -275,12 +296,73 @@
     <section class="section" id="gallery">
         <div class="section-header" data-reveal="fade-up">
             <h2>OUR PRODUCTS</h2>
-            <p style="color:rgba(255,255,255,0.7); margin-top:1rem; font-size:1rem;">Precision-engineered solutions across industries</p>
             <div class="underline"></div>
         </div>
-        <div class="products-image-wrapper" data-reveal="fade-up">
-            <img src="products_showcase.jpg" alt="VMR Engineers Stainless Steel Water Tank Range - 500L, 1000L, 1500L, 2000L, 3000L and Combos" class="products-full-image">
+
+        <div class="products-container">
+            <div class="product-cards-grid" id="productGrid">
+                
+                <!-- Product 1: 3000L SS WATER TANK -->
+                <div class="product-picture-card" data-category="overhead" data-reveal="fade-up" data-delay="100" onclick="openProductModal('product_3000l.jpeg')">
+                    <img src="product_3000l.jpeg" alt="3000L SS Water Tank - VMR Engineers" class="product-picture-img">
+                    <div class="picture-card-overlay">
+                        <span class="zoom-btn"><i data-lucide="maximize-2"></i> View Full Image</span>
+                    </div>
+                </div>
+
+                <!-- Product 2: 2000L SS WATER TANK -->
+                <div class="product-picture-card" data-category="overhead" data-reveal="fade-up" data-delay="200" onclick="openProductModal('product_2000l.jpeg')">
+                    <img src="product_2000l.jpeg" alt="2000L SS Water Tank - VMR Engineers" class="product-picture-img">
+                    <div class="picture-card-overlay">
+                        <span class="zoom-btn"><i data-lucide="maximize-2"></i> View Full Image</span>
+                    </div>
+                </div>
+
+                <!-- Product 3: 1500L & 100L SS COMBO -->
+                <div class="product-picture-card" data-category="combo" data-reveal="fade-up" data-delay="300" onclick="openProductModal('product_1500l_combo.jpeg')">
+                    <img src="product_1500l_combo.jpeg" alt="1500L & 100L SS Combo Water Tank - VMR Engineers" class="product-picture-img">
+                    <div class="picture-card-overlay">
+                        <span class="zoom-btn"><i data-lucide="maximize-2"></i> View Full Image</span>
+                    </div>
+                </div>
+
+                <!-- Product 4: 1000L & 25L SS COMBO -->
+                <div class="product-picture-card" data-category="combo" data-reveal="fade-up" data-delay="400" onclick="openProductModal('product_1000l_combo.jpeg')">
+                    <img src="product_1000l_combo.jpeg" alt="1000L & 25L SS Combo Water Tank - VMR Engineers" class="product-picture-img">
+                    <div class="picture-card-overlay">
+                        <span class="zoom-btn"><i data-lucide="maximize-2"></i> View Full Image</span>
+                    </div>
+                </div>
+
+                <!-- Product 5: 1000L SS WATER TANK -->
+                <div class="product-picture-card" data-category="overhead" data-reveal="fade-up" data-delay="500" onclick="openProductModal('product_1000l.jpeg')">
+                    <img src="product_1000l.jpeg" alt="1000L SS Water Tank - VMR Engineers" class="product-picture-img">
+                    <div class="picture-card-overlay">
+                        <span class="zoom-btn"><i data-lucide="maximize-2"></i> View Full Image</span>
+                    </div>
+                </div>
+
+                <!-- Product 6: 500L SS WATER TANK -->
+                <div class="product-picture-card" data-category="overhead" data-reveal="fade-up" data-delay="600" onclick="openProductModal('product_500l.jpeg')">
+                    <img src="product_500l.jpeg" alt="500L SS Water Tank - VMR Engineers" class="product-picture-img">
+                    <div class="picture-card-overlay">
+                        <span class="zoom-btn"><i data-lucide="maximize-2"></i> View Full Image</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        <!-- Lightbox Modal for Full-Screen Image Viewing -->
+        <div id="productModal" class="product-modal-overlay" onclick="closeProductModal(event)">
+            <div class="product-modal-content clean-modal">
+                <button class="modal-close-btn" onclick="closeProductModalDirect()"><i data-lucide="x"></i></button>
+                <div class="modal-image-only-wrapper">
+                    <img id="modalImg" src="" alt="Product Banner" class="modal-full-banner-img">
+                </div>
+            </div>
+        </div>
+
         <!-- Curved divider at the bottom (transitioning to Light #why-us) -->
         <div class="curve-divider">
             <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -395,7 +477,7 @@
                     <input type="text" placeholder="Name" required>
                     <input type="email" placeholder="Email" required>
                 </div>
-                <input type="text" placeholder="Service Needed (e.g. Custom Water Tank)">
+                <input type="text" id="serviceNeededInput" placeholder="Service Needed (e.g. Custom Water Tank)">
                 <textarea rows="4" placeholder="Describe your requirements..."></textarea>
                 <button type="submit" class="btn" style="width: 100%;">Send Request</button>
             </form>
@@ -467,6 +549,53 @@
                     }
                 });
             };
+
+            // Hero Text Word-by-Word Entrance & 3-Second Fade Out Synchronization
+            let lastVideoTime = 0;
+
+            const updateHeroTextOpacity = () => {
+                const activeVideo = (window.innerWidth > 768) 
+                    ? document.querySelector('.desktop-video') 
+                    : document.querySelector('.mobile-video');
+                const heroContent = document.querySelector('.hero-content');
+
+                if (!activeVideo || !heroContent || !activeVideo.duration) return;
+
+                const currentTime = activeVideo.currentTime;
+
+                // Detect video loop restart (resets to start) -> replay word-by-word animation
+                if (currentTime < lastVideoTime && currentTime < 0.5) {
+                    heroContent.classList.remove('animate-words');
+                    void heroContent.offsetWidth; // Force DOM reflow
+                    heroContent.classList.add('animate-words');
+                }
+                lastVideoTime = currentTime;
+
+                // Word entrance completes around 1.2s -> Stay fully visible for 2.0s -> Fade out between 3.2s and 4.0s
+                const fadeOutStart = 3.2;
+                const fadeOutEnd = 4.0;
+
+                if (currentTime >= fadeOutStart) {
+                    if (currentTime >= fadeOutEnd) {
+                        heroContent.style.opacity = '0';
+                        heroContent.style.transform = 'translateY(25px)';
+                        heroContent.style.pointerEvents = 'none';
+                    } else {
+                        const progress = (fadeOutEnd - currentTime) / (fadeOutEnd - fadeOutStart);
+                        const clampedProgress = Math.max(0, Math.min(1, progress));
+                        heroContent.style.opacity = clampedProgress.toFixed(3);
+                        heroContent.style.transform = `translateY(${(1 - clampedProgress) * 20}px)`;
+                        if (clampedProgress < 0.1) heroContent.style.pointerEvents = 'none';
+                    }
+                } else {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.pointerEvents = 'auto';
+                }
+            };
+
+            videos.forEach(v => {
+                v.addEventListener('timeupdate', updateHeroTextOpacity);
+            });
 
             // Keep videos paused at start frame while splash screen is active
             videos.forEach(v => {
@@ -637,6 +766,91 @@
 
             statsObserver.observe(statsContainer);
         }
+
+        // Product Category Filter Tabs Logic
+        const filterBtns = document.querySelectorAll('.product-filter-tabs .filter-btn');
+        const productCards = document.querySelectorAll('.product-picture-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+
+        // Product Lightbox Modal Controller
+        window.openProductModal = function(imgSrc) {
+            const modal = document.getElementById('productModal');
+            const modalImg = document.getElementById('modalImg');
+
+            if (!modal || !modalImg) return;
+
+            modalImg.src = imgSrc;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        };
+
+        window.closeProductModalDirect = function() {
+            const modal = document.getElementById('productModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        };
+
+        window.closeProductModal = function(event) {
+            if (event.target.id === 'productModal') {
+                closeProductModalDirect();
+            }
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeProductModalDirect();
+        });
+
+        // Auto pre-fill service input when clicking "Get Best Quote"
+        window.selectProductForQuote = function(productName) {
+            const serviceInput = document.getElementById('serviceNeededInput');
+            if (serviceInput) {
+                serviceInput.value = productName + ' Quote Request';
+                serviceInput.focus();
+            }
+        };
+
+        // 3D Magnetic Tilt Interaction for Product Cards
+        document.querySelectorAll('.product-picture-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -7;
+                const rotateY = ((x - centerX) / centerX) * 7;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
     </script>
 
     <!-- Floating WhatsApp Widget -->
