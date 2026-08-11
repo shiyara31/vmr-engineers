@@ -556,7 +556,7 @@ nav.scrolled .nav-pill {
 }
 
 #about {
-    background: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 40%), linear-gradient(135deg, #08162b 0%, #030a14 100%);
+    background: var(--steel-dark);
     max-width: 100%;
     padding: 120px 10% 160px;
     position: relative;
@@ -565,7 +565,7 @@ nav.scrolled .nav-pill {
 }
 
 #gallery {
-    background: radial-gradient(ellipse at 50% 40%, #071c3b 0%, #03142e 60%, #020e21 100%);
+    background: var(--steel-dark);
     max-width: 100%;
     padding: 85px 5% 150px;
     position: relative;
@@ -573,7 +573,7 @@ nav.scrolled .nav-pill {
 }
 
 #contact {
-    background: linear-gradient(160deg, #020b18 0%, #061a30 50%, #0a2540 100%);
+    background: var(--steel-dark);
     border-top: none;
     max-width: 100%;
     padding: 120px 10%;
@@ -1073,7 +1073,7 @@ nav.scrolled .nav-pill {
    WHY CHOOSE US — Hanging Paper Cards
    ============================================ */
 .why-us {
-    background: #f0ece4;
+    background: var(--steel-light);
     color: var(--steel-dark);
     padding: 100px 6% 180px;
     position: relative;
@@ -1707,9 +1707,13 @@ flex: 1;
     align-items: start;
 }
 
-.contact-details div i {
+.contact-details div i,
+.contact-details div svg {
     font-size: 1.2rem;
-    width: 25px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 3px;
 }
 
 .contact-info h3 {
@@ -1719,7 +1723,7 @@ flex: 1;
 
 .contact-details div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
@@ -2637,7 +2641,7 @@ body.splash-complete .hero-content {
    EDITORIAL SERVICE CARDS DESIGN (Staggered Overlapping Frames)
    ============================================ */
 .editorial-section {
-    background: #faf8f5;
+    background: var(--steel-light);
     padding: 80px 6% 145px;
     position: relative;
 }
