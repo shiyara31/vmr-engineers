@@ -10,9 +10,6 @@
         html, body {
             background-color: #061121 !important;
         }
-        #splash-screen {
-            background: linear-gradient(135deg, #050d1a 0%, #08162b 40%, #0d284c 75%, #030914 100%) !important;
-        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,18 +18,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="splash-active">
-
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-        <div class="splash-content">
-            <img src="logo_transparent.png" alt="VMR Engineers Logo" class="splash-logo" id="splashLogo">
-            <h1 class="splash-text" id="splashText">VMR Engineering</h1>
-            <div class="splash-line" id="splashLine"></div>
-            <p class="splash-subtitle" id="splashSubtitle">Custom Stainless Steel Engineering</p>
-        </div>
-    </div>
-
+<body>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -457,20 +443,66 @@
             <div class="contact-info" data-reveal="fade-right">
                 <h3 style="color: var(--primary-color);">Let's discuss your project</h3>
                 <p>Whether you need a custom-capacity water tank, specialized steel furniture, or precision OEM components, our engineering team is here to assist you with tailored specifications and estimates.</p>
-                <div class="contact-details" style="margin-top: 2.5rem;">
-                    <div data-reveal="fade-up" style="transition-delay: 0.1s;"><i data-lucide="map-pin" style="color: var(--secondary-color);"></i> <span>II/893, Tea Knit Industrial Complex, Pudussery Panchayath, Kanjikode West, Kerala, India - 678 623</span></div>
-                    <div data-reveal="fade-up" style="transition-delay: 0.2s;"><i data-lucide="phone" style="color: var(--secondary-color);"></i> <span><a href="tel:+917591973463" style="color: inherit; text-decoration: none;">+91 75919 73463</a>, &nbsp;<a href="tel:+917012032789" style="color: inherit; text-decoration: none;">+91 70120 32789</a></span></div>
-                    <div data-reveal="fade-up" style="transition-delay: 0.3s;"><i data-lucide="mail" style="color: var(--secondary-color);"></i> <span><a href="mailto:vmrproducts3@gmail.com" style="color: inherit; text-decoration: none;">vmrproducts3@gmail.com</a><br><a href="mailto:vmrproducts2789@gmail.com" style="color: inherit; text-decoration: none;">vmrproducts2789@gmail.com</a></span></div>
+                <div class="contact-details" style="margin-top: 2rem;">
+                    <!-- Mysore Unit -->
+                    <div class="contact-location-card" data-reveal="fade-up" style="transition-delay: 0.1s;">
+                        <div class="location-header">
+                            <h4><i data-lucide="building-2"></i> VMR ENGINEERING MYSORE</h4>
+                            <span class="location-badge">Karnataka</span>
+                        </div>
+                        <div class="contact-item-row">
+                            <i data-lucide="map-pin"></i>
+                            <span>No. 50, Near Brooke Bond Factory, KRS Road, Basthipura Road, Mandya Dist., Mysore, Karnataka - 571 438.</span>
+                        </div>
+                        <div class="contact-item-row">
+                            <i data-lucide="phone"></i>
+                            <span>
+                                <a href="tel:+919380969377">+91 93809 69377</a>, &nbsp;
+                                <a href="tel:+919995150027">+91 99951 50027</a>, &nbsp;
+                                <a href="tel:+917204106396">+91 72041 06396 (Office)</a>
+                            </span>
+                        </div>
+                        <div class="contact-item-row">
+                            <i data-lucide="mail"></i>
+                            <span><a href="mailto:info.engineeringka@vmrproduct.com">info.engineeringka@vmrproduct.com</a></span>
+                        </div>
+                    </div>
+
+                    <!-- Kerala Unit -->
+                    <div class="contact-location-card" data-reveal="fade-up" style="transition-delay: 0.2s;">
+                        <div class="location-header">
+                            <h4><i data-lucide="factory"></i> VMR ENGINEERING KERALA</h4>
+                            <span class="location-badge">Kerala</span>
+                        </div>
+                        <div class="contact-item-row">
+                            <i data-lucide="map-pin"></i>
+                            <span>II/893, Tea Knit Industrial Complex, Pudussery Panchayath, Kanjikode West, Kerala, India - 678 623.</span>
+                        </div>
+                        <div class="contact-item-row">
+                            <i data-lucide="phone"></i>
+                            <span>
+                                <a href="tel:+917591973463">+91 75919 73463</a>, &nbsp;
+                                <a href="tel:+917012032789">+91 70120 32789</a>
+                            </span>
+                        </div>
+                        <div class="contact-item-row">
+                            <i data-lucide="mail"></i>
+                            <span>
+                                <a href="mailto:vmrproducts3@gmail.com">vmrproducts3@gmail.com</a>, &nbsp;
+                                <a href="mailto:vmrproducts2789@gmail.com">vmrproducts2789@gmail.com</a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <form class="contact-form" data-reveal="fade-left" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            <form class="contact-form" data-reveal="fade-left">
                 <div class="form-grid">
                     <input type="text" placeholder="Name" required>
                     <input type="email" placeholder="Email" required>
                 </div>
                 <input type="text" id="serviceNeededInput" placeholder="Service Needed (e.g. Custom Water Tank)">
-                <textarea rows="4" placeholder="Describe your requirements..."></textarea>
+                <textarea rows="5" placeholder="Describe your requirements..."></textarea>
                 <button type="submit" class="btn" style="width: 100%;">Send Request</button>
             </form>
         </div>
@@ -513,16 +545,13 @@
     </footer>
 
     <script>
-        // Splash Screen & Sequenced Hero Video Controller
+        // Hero Video Controller
         document.addEventListener('DOMContentLoaded', () => {
-            const splash = document.getElementById('splash-screen');
-            const textEl = document.getElementById('splashText');
             const videos = document.querySelectorAll('.hero-video-bg');
             
-            // Function to start video playback from the beginning
+            // Function to start video playback
             const startVideoPlayback = () => {
                 videos.forEach(v => {
-                    v.currentTime = 0;
                     const playPromise = v.play();
                     if (playPromise !== undefined) {
                         playPromise.catch(err => console.log('Video playback waiting for user interaction:', err));
@@ -540,13 +569,6 @@
                 if (!activeVideo || !heroTitleGroup.length || !activeVideo.duration) return;
 
                 const currentTime = activeVideo.currentTime;
-
-                // Timings matching Reference Video:
-                // 0.0s - 3.2s: Initial house & tank intro (Text hidden, CTA button visible at bottom)
-                // 3.2s - 4.2s: Text animates in smoothly over water tank scene
-                // 4.2s - 7.6s: Text fully visible over water tank
-                // 7.6s - 8.3s: Text smoothly fades out before 3D VMR logo reveal
-                // 8.3s - 9.6s: Text completely hidden for 3D VMR logo reveal scene!
 
                 const textAppearStart = 3.2;
                 const textAppearEnd = 4.2;
@@ -587,53 +609,12 @@
                 v.addEventListener('timeupdate', updateHeroTextOpacity);
             });
 
-            // Keep videos paused at start frame while splash screen is active
-            videos.forEach(v => {
-                v.pause();
-                try { v.currentTime = 0; } catch (e) {}
-            });
-
-            // Split text into spans for staggered letter entrance animation
-            if (textEl) {
-                const text = textEl.textContent.trim();
-                textEl.innerHTML = text.split('').map((char, index) => {
-                    if (char === ' ') {
-                        return `<span class="splash-char space" style="animation-delay: ${index * 0.04}s">&nbsp;</span>`;
-                    }
-                    return `<span class="splash-char" style="animation-delay: ${index * 0.04}s">${char}</span>`;
-                }).join('');
-            }
-
-            // Step 1: Animate logo first
-            setTimeout(() => {
-                document.body.classList.add('animate-splash');
-            }, 100);
-
-            // Step 2: Animate text writings & line after logo appears
-            setTimeout(() => {
-                document.body.classList.add('animate-splash-text');
-            }, 1000);
-
-            // Step 3: Fade out splash screen and start hero video right after intro finishes
-            setTimeout(() => {
-                if (splash) splash.classList.add('fade-out');
-                document.body.classList.remove('splash-active');
-                document.body.classList.add('splash-complete');
-                
-                // Hero video starts playing only NOW after intro sequence
-                startVideoPlayback();
-            }, 2600);
-
-            // Complete DOM cleanup for splash screen
-            setTimeout(() => {
-                if (splash) splash.remove();
-            }, 3500);
+            // Start hero video playback immediately
+            startVideoPlayback();
 
             // Fallback for strict mobile autoplay restrictions: start video on first touch/click if blocked
             const userInteractionHandler = () => {
-                if (document.body.classList.contains('splash-complete')) {
-                    startVideoPlayback();
-                }
+                startVideoPlayback();
             };
             document.addEventListener('touchstart', userInteractionHandler, { once: true, passive: true });
             document.addEventListener('click', userInteractionHandler, { once: true });
